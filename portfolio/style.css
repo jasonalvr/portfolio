@@ -1,0 +1,301 @@
+/* =========================================================
+   DAFTAR ISI CSS
+   1. Warna & tema   2. Dasar   3. Header   4. Hero
+   5. Judul bagian   6. Tentang 7. Proyek   8. Skill
+   9. Kontak         10. Animasi
+   ========================================================= */
+
+
+/* ---------- 1. WARNA & TEMA ---------- */
+:root {
+  --bg:   #F5F7FB;   /* latar halaman */
+  --ink:  #0B1220;   /* warna teks utama */
+  --mute: #5B6678;   /* teks sekunder */
+  --line: #DDE3EE;   /* garis & border */
+  --surf: #FFFFFF;   /* latar kartu */
+  --acc:  #4F46E5;   /* warna aksen 1 */
+  --acc2: #0891B2;   /* warna aksen 2 (gradasi) */
+  --glow: rgba(79, 70, 229, .14);
+  --hbg:  rgba(245, 247, 251, .8);   /* latar header */
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Tema gelap otomatis */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #070B14;  --ink: #E8EDF7;  --mute: #8F9BB3;  --line: #1F2A3D;
+    --surf: #0E1524;  --acc: #8B8CFF;  --acc2: #22D3EE;
+    --glow: rgba(139, 140, 255, .18);  --hbg: rgba(7, 11, 20, .75);
+  }
+}
+
+/* Tema gelap dari tombol ◐ */
+:root[data-theme="dark"] {
+  --bg: #070B14;  --ink: #E8EDF7;  --mute: #8F9BB3;  --line: #1F2A3D;
+  --surf: #0E1524;  --acc: #8B8CFF;  --acc2: #22D3EE;
+  --glow: rgba(139, 140, 255, .18);  --hbg: rgba(7, 11, 20, .75);
+}
+
+
+/* ---------- 2. DASAR ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
+}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.7 "Plus Jakarta Sans", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--hbg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 30;
+}
+
+/* Tipografi Heading menggunakan Space Grotesk */
+h1, h2, h3 { 
+  font-family: 'Space Grotesk', system-ui, sans-serif; 
+  margin: 0; 
+  line-height: 1.1; 
+  letter-spacing: -0.03em;
+}
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+/* Teks gradasi / highlight pada nama */
+.grad, .highlight {
+  background: linear-gradient(100deg, var(--acc), var(--acc2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Tombol */
+.btn {
+  padding: 14px 26px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: var(--surf);
+  transition: transform .2s, box-shadow .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn.p {
+  background: linear-gradient(100deg, var(--acc), var(--acc2));
+  color: #fff;
+  border: 0;
+  box-shadow: 0 10px 30px -8px var(--acc);
+}
+
+
+/* ---------- 3. HEADER ---------- */
+header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: var(--hbg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+.logo { font: 700 20px 'Space Grotesk', sans-serif; text-decoration: none; letter-spacing: -0.02em; }
+
+nav { display: flex; align-items: center; gap: 22px; font-weight: 500; font-size: 15px; }
+nav a { text-decoration: none; color: var(--mute); transition: color .2s; }
+nav a:hover { color: var(--ink); }
+
+#tg {
+  all: unset;
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  background: var(--surf);
+}
+@media (max-width: 640px) { nav a { display: none; } }
+
+
+/* ---------- 4. HERO ---------- */
+.hero { position: relative; min-height: calc(100vh - 64px); display: flex; align-items: center; overflow: hidden; }
+#net  { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero .wrap { position: relative; padding-top: 64px; padding-bottom: 64px; }
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  background: var(--surf);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 14px;
+  color: var(--mute);
+}
+.pill i { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 4px rgba(34, 197, 94, .2); }
+
+.hero h1 { 
+  font-size: clamp(38px, 6.5vw, 76px); 
+  font-weight: 700; 
+  margin: 22px 0 0; 
+  max-width: 17ch; 
+}
+.role { 
+  font: 600 clamp(18px, 2.5vw, 24px) 'Space Grotesk', sans-serif; 
+  margin-top: 20px; 
+  min-height: 1.4em; 
+  color: var(--mute);
+}
+.role b { 
+  color: var(--ink);
+  border-right: 2px solid var(--acc); 
+  padding-right: 4px; 
+  animation: blink 1s steps(1) infinite; 
+}
+.hero p.lead { max-width: 52ch; color: var(--mute); font-size: 18px; margin: 18px 0 0; }
+
+.btns  { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+.stats { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 56px; }
+.stats div { font-size: 14px; color: var(--mute); }
+.stats strong { display: block; font: 700 32px 'Space Grotesk', sans-serif; color: var(--ink); letter-spacing: -0.02em; }
+
+
+/* ---------- 5. JUDUL BAGIAN ---------- */
+section { padding: 96px 0; }
+.eyebrow { font: 600 12px "Plus Jakarta Sans", sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--acc); }
+h2 { font-size: clamp(30px, 4.5vw, 48px); margin: 10px 0 40px; font-weight: 700; }
+
+
+/* ---------- 6. TENTANG + TIMELINE ---------- */
+.about { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; }
+.about p { margin: 0 0 16px; color: var(--mute); }
+@media (max-width: 760px) { .about { grid-template-columns: 1fr; } }
+
+.tl { border-left: 2px solid var(--line); padding-left: 24px; display: grid; gap: 26px; }
+.tl div { position: relative; line-height: 1.5; }
+.tl div::before {
+  content: "";
+  position: absolute;
+  left: -31px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--acc);
+  box-shadow: 0 0 0 4px var(--glow);
+}
+.tl small { color: var(--mute); font-size: 14px; }
+.tl strong { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
+
+
+/* ---------- 7. PROYEK ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
+
+.card {
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--surf);
+  border-radius: 20px;
+  padding: 28px;
+  overflow: hidden;
+  transition: transform .25s, border-color .25s;
+  --mx: 50%;  --my: 0%;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(320px circle at var(--mx) var(--my), var(--glow), transparent 70%);
+  opacity: 0;
+  transition: opacity .25s;
+}
+.card:hover { transform: translateY(-6px); border-color: var(--acc); }
+.card:hover::before { opacity: 1; }
+.card > * { position: relative; }
+
+.num { font: 700 14px 'Space Grotesk', sans-serif; color: var(--acc); }
+.card h3 { font-size: 22px; font-weight: 700; margin: 14px 0 10px; }
+.card .num + h3 { margin-top: 10px; }
+.card > h3:first-child { margin-top: 0; }
+.card p { color: var(--mute); margin: 0; font-size: 15px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 0; }
+.tags span { font-size: 13px; padding: 3px 11px; border-radius: 99px; border: 1px solid var(--line); color: var(--mute); }
+
+.links a { font-weight: 600; font-size: 15px; color: var(--acc); text-decoration: none; margin-right: 18px; }
+.links a:hover { text-decoration: underline; }
+
+
+/* ---------- 8. SKILL ---------- */
+.skills { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+@media (max-width: 760px) { .skills { grid-template-columns: 1fr; } }
+
+.skill { margin-bottom: 22px; }
+.skill .top { display: flex; justify-content: space-between; font-weight: 500; margin-bottom: 8px; }
+.skill .top span { color: var(--mute); font-size: 14px; }
+.bar { height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--acc), var(--acc2));
+  transition: width 1.2s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+/* ---------- 9. KONTAK & FOOTER ---------- */
+.cta {
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 72px 24px;
+  background: var(--surf);
+  position: relative;
+  overflow: hidden;
+}
+.cta::before { content: ""; position: absolute; inset: -40% -10% auto; height: 80%; background: radial-gradient(closest-side, var(--glow), transparent); }
+.cta > * { position: relative; }
+.cta h2 { margin: 0 0 14px; }
+.cta p { color: var(--mute); margin: 0 auto 28px; max-width: 46ch; }
+
+.soc { margin-top: 26px; display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; }
+.soc a { color: var(--mute); text-decoration: none; font-weight: 500; }
+.soc a:hover { color: var(--acc); }
+
+footer { padding: 36px 0 56px; text-align: center; color: var(--mute); font-size: 14px; }
+
+
+/* ---------- 10. ANIMASI ---------- */
+@keyframes blink { 50% { border-color: transparent; } }
+
+.js .rv { opacity: 0; transform: translateY(28px); transition: opacity .7s, transform .7s; }
+.js .rv.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .js .rv { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
