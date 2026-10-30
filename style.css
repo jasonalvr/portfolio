@@ -1,29 +1,19 @@
-/* =========================================================
-   DAFTAR ISI CSS
-   1. Warna & tema   2. Dasar   3. Header   4. Hero
-   5. Judul bagian   6. Tentang 7. Proyek   8. Skill
-   9. Kontak         10. Animasi
-   ========================================================= */
-
-
-/* ---------- 1. WARNA & TEMA ---------- */
 :root {
-  --bg:   #F5F7FB;   /* latar halaman */
-  --ink:  #0B1220;   /* warna teks utama */
-  --mute: #5B6678;   /* teks sekunder */
-  --line: #DDE3EE;   /* garis & border */
-  --surf: #FFFFFF;   /* latar kartu */
-  --acc:  #4F46E5;   /* warna aksen 1 */
-  --acc2: #0891B2;   /* warna aksen 2 (gradasi) */
+  --bg:   #F5F7FB; 
+  --ink:  #0B1220;  
+  --mute: #5B6678;  
+  --line: #DDE3EE;  
+  --surf: #FFFFFF;  
+  --acc:  #4F46E5;   
+  --acc2: #0891B2;  
   --glow: rgba(79, 70, 229, .14);
-  --hbg:  rgba(245, 247, 251, .8);   /* latar header */
+  --hbg:  rgba(245, 247, 251, .8); 
 
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Tema gelap otomatis */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #070B14;  --ink: #E8EDF7;  --mute: #8F9BB3;  --line: #1F2A3D;
@@ -32,15 +22,12 @@
   }
 }
 
-/* Tema gelap dari tombol ◐ */
 :root[data-theme="dark"] {
   --bg: #070B14;  --ink: #E8EDF7;  --mute: #8F9BB3;  --line: #1F2A3D;
   --surf: #0E1524;  --acc: #8B8CFF;  --acc2: #22D3EE;
   --glow: rgba(139, 140, 255, .18);  --hbg: rgba(7, 11, 20, .75);
 }
 
-
-/* ---------- 2. DASAR ---------- */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
@@ -66,11 +53,10 @@ body::before {
   z-index: 30;
 }
 
-/* Tipografi Heading menggunakan Space Grotesk */
-h1, h2, h3 { 
-  font-family: 'Space Grotesk', system-ui, sans-serif; 
-  margin: 0; 
-  line-height: 1.1; 
+h1, h2, h3 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  margin: 0;
+  line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
@@ -79,7 +65,6 @@ a { color: inherit; }
 
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
-/* Teks gradasi / highlight pada nama */
 .grad, .highlight {
   background: linear-gradient(100deg, var(--acc), var(--acc2));
   -webkit-background-clip: text;
@@ -87,7 +72,6 @@ a { color: inherit; }
   color: transparent;
 }
 
-/* Tombol */
 .btn {
   padding: 14px 26px;
   border-radius: 12px;
@@ -107,7 +91,6 @@ a { color: inherit; }
 }
 
 
-/* ---------- 3. HEADER ---------- */
 header {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
@@ -138,10 +121,9 @@ nav a:hover { color: var(--ink); }
 @media (max-width: 640px) { nav a { display: none; } }
 
 
-/* ---------- 4. HERO ---------- */
 .hero { position: relative; min-height: calc(100vh - 64px); display: flex; align-items: center; overflow: hidden; }
 #net  { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero .wrap { position: relative; padding-top: 64px; padding-bottom: 64px; }
+.hero .wrap { position: relative; padding-top: 40px; padding-bottom: 40px; }
 
 .pill {
   display: inline-flex;
@@ -156,39 +138,85 @@ nav a:hover { color: var(--ink); }
 }
 .pill i { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 4px rgba(34, 197, 94, .2); }
 
-.hero h1 { 
-  font-size: clamp(38px, 6.5vw, 76px); 
-  font-weight: 700; 
-  margin: 22px 0 0; 
-  max-width: 17ch; 
+.hero h1 {
+  font-size: clamp(32px, 4.3vw, 56px);
+  font-weight: 700;
+  margin: 20px 0 0;
+  max-width: 20ch;
 }
-.role { 
-  font: 600 clamp(18px, 2.5vw, 24px) 'Space Grotesk', sans-serif; 
-  margin-top: 20px; 
-  min-height: 1.4em; 
+.role {
+  font: 600 clamp(18px, 2.5vw, 24px) 'Space Grotesk', sans-serif;
+  margin-top: 20px;
+  min-height: 1.4em;
   color: var(--mute);
 }
-.role b { 
+.role b {
   color: var(--ink);
-  border-right: 2px solid var(--acc); 
-  padding-right: 4px; 
-  animation: blink 1s steps(1) infinite; 
+  border-right: 2px solid var(--acc);
+  padding-right: 4px;
+  animation: blink 1s steps(1) infinite;
 }
 .hero p.lead { max-width: 52ch; color: var(--mute); font-size: 18px; margin: 18px 0 0; }
 
-.btns  { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
-.stats { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 56px; }
+.btns  { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.stats { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 40px; }
 .stats div { font-size: 14px; color: var(--mute); }
 .stats strong { display: block; font: 700 32px 'Space Grotesk', sans-serif; color: var(--ink); letter-spacing: -0.02em; }
 
 
-/* ---------- 5. JUDUL BAGIAN ---------- */
+.hero .wrap.hero-grid { max-width: 1180px; display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; align-items: center; }
+
+.hero-photo {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  max-width: 500px;
+  justify-self: end;
+  aspect-ratio: 4 / 5;
+}
+.hero-photo::before {    
+  content: "";
+  position: absolute;
+  inset: 8% -10% 0;
+  background: radial-gradient(closest-side, var(--glow), transparent 75%);
+  filter: blur(10px);
+}
+.hero-photo img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+}
+.hero-photo .initials { display: none; }
+
+.hero-photo.no-img img { display: none; }
+.hero-photo.no-img .initials {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  inset: 0;
+  font: 700 110px 'Space Grotesk', sans-serif;
+  background: linear-gradient(135deg, var(--acc), var(--acc2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 860px) {
+  .hero .wrap.hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-photo { order: -1; max-width: 240px; justify-self: start; }
+}
+
+
 section { padding: 96px 0; }
 .eyebrow { font: 600 12px "Plus Jakarta Sans", sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--acc); }
 h2 { font-size: clamp(30px, 4.5vw, 48px); margin: 10px 0 40px; font-weight: 700; }
 
 
-/* ---------- 6. TENTANG + TIMELINE ---------- */
 .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; }
 .about p { margin: 0 0 16px; color: var(--mute); }
 @media (max-width: 760px) { .about { grid-template-columns: 1fr; } }
@@ -210,7 +238,6 @@ h2 { font-size: clamp(30px, 4.5vw, 48px); margin: 10px 0 40px; font-weight: 700;
 .tl strong { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
 
 
-/* ---------- 7. PROYEK ---------- */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
 
 .card {
@@ -248,7 +275,58 @@ h2 { font-size: clamp(30px, 4.5vw, 48px); margin: 10px 0 40px; font-weight: 700;
 .links a:hover { text-decoration: underline; }
 
 
-/* ---------- 8. SKILL ---------- */
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 0 22px; }
+.shot {
+  all: unset;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  aspect-ratio: 16 / 10;
+}
+.shot:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.shot:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+.shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .4s; }
+.shot:hover img { transform: scale(1.05); }
+
+.shot.no-img { cursor: default; border-style: dashed; }
+.shot.no-img img { display: none; }
+.shot.no-img::after {
+  content: "Foto belum ditambahkan";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--mute);
+}
+
+.lb { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; background: rgba(3, 6, 12, .88); cursor: zoom-out; }
+.lb[hidden] { display: none; }
+.lb img { max-width: 100%; max-height: 100%; border-radius: 14px; box-shadow: 0 30px 80px rgba(0, 0, 0, .6); }
+.lb-x {
+  all: unset;
+  position: absolute;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+  cursor: pointer;
+}
+.lb-x:focus-visible { outline: 2px solid #fff; }
+
+
 .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
 @media (max-width: 760px) { .skills { grid-template-columns: 1fr; } }
 
@@ -266,7 +344,6 @@ h2 { font-size: clamp(30px, 4.5vw, 48px); margin: 10px 0 40px; font-weight: 700;
 }
 
 
-/* ---------- 9. KONTAK & FOOTER ---------- */
 .cta {
   text-align: center;
   border: 1px solid var(--line);
@@ -288,7 +365,6 @@ h2 { font-size: clamp(30px, 4.5vw, 48px); margin: 10px 0 40px; font-weight: 700;
 footer { padding: 36px 0 56px; text-align: center; color: var(--mute); font-size: 14px; }
 
 
-/* ---------- 10. ANIMASI ---------- */
 @keyframes blink { 50% { border-color: transparent; } }
 
 .js .rv { opacity: 0; transform: translateY(28px); transition: opacity .7s, transform .7s; }
