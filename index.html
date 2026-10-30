@@ -4,10 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <!-- EDIT: judul yang muncul di tab browser -->
   <title>Portfolio Jason Alvaro Gouw</title>
 
-  <!-- Google Fonts: Space Grotesk (Tech Heading) & Plus Jakarta Sans (Clean Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -17,9 +15,6 @@
 
 <body>
 
-  <!-- =========================================================
-       HEADER
-       ========================================================= -->
   <header>
     <div class="wrap">
       <a class="logo" href="#top">Jason<span class="grad"> Alvaro Gouw</span></a>
@@ -36,40 +31,44 @@
 
   <main id="top">
 
-    <!-- =========================================================
-         HERO
-         ========================================================= -->
     <div class="hero">
       <canvas id="net" aria-hidden="true"></canvas>
-      <div class="wrap">
-        <span class="pill"><i></i>Undergraduate Computer Science Student · BINUS University</span>
+      <div class="wrap hero-grid">
 
-        <h1>Halo, saya <span class="highlight">Jason Alvaro Gouw</span>. Saya membangun web dan <span class="grad">memimpin tim</span>.</h1>
-        <div class="role">Fokus di <b id="ty"></b></div>
+        <div class="hero-text">
+          <span class="pill"><i></i>Undergraduate Computer Science Student · BINUS University</span>
 
-        <p class="lead">
-          Mahasiswa Computer Science BINUS University dengan pengalaman memimpin Organisasi dan membuat
-          Project web. Terbiasa bekerja dalam tim, mengatur waktu, dan berkomunikasi dengan efektif.
-        </p>
+          <h1>Halo, saya <span class="highlight">Jason Alvaro Gouw</span>. Saya membangun web dan <span class="grad">memimpin tim</span>.</h1>
+          <div class="role">Fokus di <b id="ty"></b></div>
 
-        <div class="btns">
-          <a class="btn p" href="#Project">Lihat Project</a>
-          <a class="btn" href="#Contact">Hubungi saya</a>
+          <p class="lead">
+            Mahasiswa Computer Science BINUS University dengan pengalaman memimpin Organisasi dan membuat
+            Project web. Terbiasa bekerja dalam tim, mengatur waktu, dan berkomunikasi dengan efektif.
+          </p>
+
+          <div class="btns">
+            <a class="btn p" href="#Project">Lihat Project</a>
+            <a class="btn" href="#Contact">Hubungi saya</a>
+          </div>
+
+          <div class="stats">
+            <div><strong>Sem 5</strong> Computer Science</div>
+            <div><strong>2</strong>Project</div>
+            <div><strong>3</strong>Organization Experience</div>
+            <div><strong>4</strong>Volunteer Experience</div>
+          </div>
         </div>
 
-        <div class="stats">
-          <div><strong>Sem 5</strong> Computer Science</div>
-          <div><strong>2</strong>Project</div>
-          <div><strong>3</strong>Organization Experience</div>
-          <div><strong>4</strong>Volunteer Experience</div>
-        </div>
+        <figure class="hero-photo">
+          <img src="./img/foto.png" alt="Foto Jason Alvaro Gouw" width="400" height="500"
+               onerror="this.parentElement.classList.add('no-img')">
+          <span class="initials" aria-hidden="true">JA</span>
+        </figure>
+
       </div>
     </div>
 
 
-    <!-- =========================================================
-         About + TIMELINE
-         ========================================================= -->
     <section id="About">
       <div class="wrap">
         <div class="eyebrow">About</div>
@@ -91,9 +90,6 @@
     </section>
 
 
-    <!-- =========================================================
-         Project
-         ========================================================= -->
     <section id="Project">
       <div class="wrap">
         <div class="eyebrow">Project</div>
@@ -101,6 +97,11 @@
 
         <div class="grid">
           <article class="card rv">
+            <div class="shots">
+              <button class="shot" aria-label="Perbesar foto: Halaman Home website Christian Wijaya"><img src="img/fashion-1.png" alt="Halaman Home website Christian Wijaya" loading="lazy" onerror="this.parentElement.classList.add('no-img')"></button>
+              <button class="shot" aria-label="Perbesar foto: Halaman Product website Christian Wijaya"><img src="img/fashion-2.png" alt="Halaman Product website Christian Wijaya" loading="lazy" onerror="this.parentElement.classList.add('no-img')"></button>
+              <button class="shot" aria-label="Perbesar foto: Halaman Product Detail website Christian Wijaya"><img src="img/fashion-3.png" alt="Halaman Product Detail website Christian Wijaya" loading="lazy" onerror="this.parentElement.classList.add('no-img')"></button>
+            </div>
             <span class="num">01</span>
             <h3>Website Luxury Fashion Brand</h3>
             <p>Merancang dan membuat website responsif untuk brand fashion mewah Christian Wijaya agar produknya bisa dipromosikan secara online. Terdiri dari 5 halaman utama: Home, Product, Product Detail, Event, dan About Us.</p>
@@ -108,19 +109,21 @@
           </article>
 
           <article class="card rv">
+            <div class="shots">
+              <button class="shot" aria-label="Perbesar foto: Tampilan awal aplikasi TaBi"><img src="img/tabi-1.png" alt="Tampilan awal aplikasi TaBi" loading="lazy" onerror="this.parentElement.classList.add('no-img')"></button>
+              <button class="shot" aria-label="Perbesar foto: Halaman belajar bahasa isyarat di TaBi"><img src="img/tabi-2.png" alt="Halaman belajar bahasa isyarat di TaBi" loading="lazy" onerror="this.parentElement.classList.add('no-img')"></button>
+              <button class="shot" aria-label="Perbesar foto: Fitur interaktif di TaBi"><img src="img/tabi-3.png" alt="Fitur interaktif di TaBi" loading="lazy" onerror="this.parentElement.classList.add('no-img')"></button>
+            </div>
             <span class="num">02</span>
             <h3>TaBi</h3>
             <p>Aplikasi edukatif, interaktif, dan mudah diakses untuk membantu kaum tunawicara serta orang di sekitar mereka mempelajari bahasa isyarat.</p>
-            <div class="tags"><span>Aplikasi edukasi</span><span>Aksesibilitas</span><span>Bahasa isyarat</span></div>
+            <div class="tags"><span>React.js</span><span>CSS</span><span>Json</span></div>
           </article>
         </div>
       </div>
     </section>
 
 
-    <!-- =========================================================
-         PENGALAMAN Organization
-         ========================================================= -->
     <section id="Organization">
       <div class="wrap">
         <div class="eyebrow">Organization</div>
@@ -149,9 +152,6 @@
     </section>
 
 
-    <!-- =========================================================
-         SKILL
-         ========================================================= -->
     <section id="skill">
       <div class="wrap">
         <div class="eyebrow">Skill</div>
@@ -183,33 +183,27 @@
     </section>
 
 
-    <!-- =========================================================
-         VOLUNTEER
-         ========================================================= -->
     <section id="volunteer">
       <div class="wrap">
         <div class="eyebrow">Volunteer</div>
-        <h2>Berbagi untuk <span class="grad">sekitar</span>.</h2>
+        <h2>Kegiatan untuk <span class="grad">masyarakat</span>.</h2>
 
         <div class="tl rv">
-          <div><small>Oktober 2025</small><strong>Bimbingan Belajar (BIMBEL) Sitanala</strong>Relawan kegiatan belajar</div>
-          <div><small>Maret 2025</small><strong>TFI Volunteer, Pelestarian Lingkungan Tzu Chi</strong>Relawan pelestarian lingkungan</div>
-          <div><small>November 2024</small><strong>TFI Volunteer, Pelestarian Lingkungan Tzu Chi</strong>Relawan pelestarian lingkungan</div>
-          <div><small>Oktober 2024</small><strong>Volunteer Campaign, Yayasan Sosial Tangan Kasih</strong>Relawan kampanye sosial</div>
+          <div><small>Oktober 2025</small><strong>Bimbingan Belajar (BIMBEL) Sitanala</strong>Volunteer kegiatan mengajar</div>
+          <div><small>Maret 2025</small><strong>TFI Volunteer, Pelestarian Lingkungan Tzu Chi</strong>Volunteer pelestarian lingkungan</div>
+          <div><small>November 2024</small><strong>TFI Volunteer, Pelestarian Lingkungan Tzu Chi</strong>Volunteer pelestarian lingkungan</div>
+          <div><small>Oktober 2024</small><strong>Volunteer Campaign, Yayasan Sosial Tangan Kasih</strong>Volunteer kegiatan sosialisasi ke panti asuhan</div>
         </div>
       </div>
     </section>
 
 
-    <!-- =========================================================
-         Contact (Diperbarui dengan LinkedIn, GitHub, & Instagram)
-         ========================================================= -->
     <section id="Contact">
       <div class="wrap">
         <div class="cta rv">
           <div class="eyebrow">Contact</div>
-          <h2>Ayo <span class="grad">berkolaborasi</span>.</h2>
-          <p>Terbuka untuk kolaborasi Project dan kesempatan baru. Kirim pesan kapan saja.</p>
+          <h2>Hubungi <span class="grad">saya</span>.</h2>
+          <p>Ada yang mau didiskusikan? Kirim pesan kapan saja yaa.</p>
 
           <a class="btn p" href="mailto:jasonalvaro814@gmail.com">jasonalvaro814@gmail.com</a>
 
@@ -226,6 +220,11 @@
 
   <footer>© 2026 Jason Alvaro Gouw. Dibuat dengan HTML, CSS, dan sedikit JavaScript.</footer>
 
+
+  <div id="lb" class="lb" hidden role="dialog" aria-modal="true" aria-label="Foto diperbesar">
+    <button class="lb-x" aria-label="Tutup">✕</button>
+    <img alt="">
+  </div>
 
   <script>
     var CONFIG = {
@@ -386,6 +385,23 @@
     setupNet();
     drawNet();
     addEventListener('resize', function () { setupNet(); if (reduceMotion) drawNet(); });
+
+    var lb = document.getElementById('lb');
+    var lbImg = lb.querySelector('img');
+    function closeLb() { lb.hidden = true; lbImg.removeAttribute('src'); }
+    document.addEventListener('click', function (e) {
+      var s = e.target.closest('.shot');
+      if (s && !s.classList.contains('no-img')) {
+        var img = s.querySelector('img');
+        lbImg.src = img.currentSrc || img.src;
+        lbImg.alt = img.alt;
+        lb.hidden = false;
+        lb.querySelector('.lb-x').focus();
+      } else if (e.target.closest('#lb')) {
+        closeLb();
+      }
+    });
+    addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) closeLb(); });
   </script>
 </body>
 </html>
